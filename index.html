@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر العفراء | أناقة وفخامة</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- إضافة خطوط جوجل الأنيقة -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">متجر العفراء</div>
+        <ul class="nav-links">
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#products">المنتجات</a></li>
+            <li><a href="#about">عن المتجر</a></li>
+            <li><a href="admin.html">لوحة التحكم</a></li>
+        </ul>
+        <div class="nav-icons">
+            <div id="cart-icon">🛒 <span id="cart-count">0</span></div>
+            <div id="user-icon">👤</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>أناقتك تبدأ من هنا</h1>
+            <p>اكتشفي تشكيلة العفراء الحصرية لأرقى الأزياء النسائية</p>
+            <a href="#products" class="btn-luxury">تسوقي الآن</a>
+        </div>
+    </header>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <h2 class="section-title">مجموعتنا الفاخرة</h2>
+        <div id="products-container" class="products-grid">
+            <!-- المنتجات سيتم تحميلها ديناميكياً -->
+        </div>
+    </section>
+
+    <!-- Chat Widget -->
+    <div id="chat-widget" class="chat-minimized">
+        <div class="chat-header">
+            <span>تحدثي معنا</span>
+            <button id="close-chat">×</button>
+        </div>
+        <div id="chat-auth" class="chat-body">
+            <h3>تسجيل الدخول للدردشة</h3>
+            <input type="text" id="chat-username" placeholder="اسم المستخدم">
+            <input type="password" id="chat-password" placeholder="كلمة المرور">
+            <button id="chat-login-btn">دخول</button>
+        </div>
+        <div id="chat-messages-container" class="chat-body hidden">
+            <div id="chat-messages"></div>
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="اكتب رسالتك...">
+                <button id="send-msg-btn">إرسال</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Firebase SDK (Version 9 compat) -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>

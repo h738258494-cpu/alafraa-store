@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم | متجر العفراء</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-body">
+    <nav class="admin-nav">
+        <h2>لوحة إدارة متجر العفراء</h2>
+        <a href="index.html" class="btn-back">العودة للمتجر</a>
+    </nav>
+
+    <div class="admin-container">
+        <!-- Add Product Section -->
+        <section class="admin-section">
+            <h3>إضافة منتج جديد</h3>
+            <form id="add-product-form" class="admin-form">
+                <input type="text" id="p-name" placeholder="اسم المنتج" required>
+                <input type="number" id="p-price" placeholder="السعر" required>
+                <input type="text" id="p-image" placeholder="رابط الصورة" required>
+                <textarea id="p-desc" placeholder="وصف المنتج" required></textarea>
+                <button type="submit" class="btn-luxury">إضافة المنتج</button>
+            </form>
+        </section>
+
+        <!-- Manage Products Section -->
+        <section class="admin-section">
+            <h3>إدارة المنتجات</h3>
+            <div id="admin-products-list" class="admin-list">
+                <!-- قائمة المنتجات هنا -->
+            </div>
+        </section>
+
+        <!-- Customer Messages Section -->
+        <section class="admin-section">
+            <h3>رسائل العملاء</h3>
+            <div id="admin-chats-list" class="admin-list">
+                <!-- قائمة المحادثات هنا -->
+            </div>
+            <div id="admin-chat-window" class="admin-chat-window hidden">
+                <div id="admin-chat-messages"></div>
+                <div class="chat-input-area">
+                    <input type="text" id="admin-chat-input" placeholder="رد على العميل...">
+                    <button id="admin-send-btn">إرسال</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

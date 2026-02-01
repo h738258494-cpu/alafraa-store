@@ -1,0 +1,414 @@
+/* الإعدادات العامة */
+:root {
+    --primary-color: #f8d7da; /* وردي ناعم */
+    --secondary-color: #fdf5e6; /* بيج ناعم */
+    --accent-color: #d4af37; /* ذهبي خفيف */
+    --text-color: #4a4a4a;
+    --white: #ffffff;
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Amiri', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 400;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3)), 
+                url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero-content h1 {
+    font-family: 'Amiri', serif;
+    font-size: 4rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease 0.5s backwards;
+}
+
+.btn-luxury {
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: var(--transition);
+    border: 2px solid var(--accent-color);
+    cursor: pointer;
+}
+
+.btn-luxury:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* Products Section */
+.products-section {
+    padding: 80px 10%;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Amiri', serif;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    margin: 10px auto;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: var(--transition);
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.product-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.product-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* Chat Widget */
+#chat-widget {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 320px;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    z-index: 2000;
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.chat-minimized {
+    height: 50px;
+    width: 150px !important;
+    cursor: pointer;
+}
+
+.chat-header {
+    background: var(--primary-color);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+}
+
+.chat-body {
+    height: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#chat-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.msg {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.msg-sent {
+    align-self: flex-end;
+    background: var(--primary-color);
+}
+
+.msg-received {
+    align-self: flex-start;
+    background: #f1f1f1;
+}
+
+.chat-input-area {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input-area input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+}
+
+.hidden { display: none !important; }
+
+/* Admin Navigation */
+.admin-nav {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.btn-back {
+    background: var(--white);
+    color: var(--accent-color);
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.btn-back:hover {
+    transform: translateX(5px);
+}
+
+/* Admin Styles */
+.admin-container {
+    padding: 100px 10%;
+}
+
+.admin-section {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.admin-form {
+    display: grid;
+    gap: 15px;
+}
+
+.admin-form input, .admin-form textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+}
+
+.admin-list {
+    margin-top: 20px;
+}
+
+.admin-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    transition: var(--transition);
+}
+
+.admin-item:hover {
+    background: var(--secondary-color);
+    padding-right: 20px;
+}
+
+.admin-item button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.admin-item button:hover {
+    transform: scale(1.05);
+}
+
+.admin-chat-window {
+    margin-top: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    padding: 20px;
+    background: var(--secondary-color);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* تأثيرات إضافية */
+.nav-icons {
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.nav-icons div {
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.nav-icons div:hover {
+    transform: scale(1.2);
+}
+
+/* تأثيرات الحركة على المنتجات */
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+    transform: translateX(-100%);
+    transition: var(--transition);
+}
+
+.product-card:hover::before {
+    transform: translateX(100%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    #chat-widget {
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        border-radius: 0;
+    }
+}
